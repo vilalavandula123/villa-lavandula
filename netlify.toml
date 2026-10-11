@@ -12,3 +12,7 @@
   SITE_INDEXABLE = "false"
   # SMTP_* / MAIL_FROM / ENQUIRY_TO НЕ се пишат тук (тайни) — задават се в Netlify:
   # Project configuration → Environment variables. Виж .env.example.
+
+# Адаптерът на Netlify за Next.js (сървърни страници, формата, оптимизация на снимки).
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
