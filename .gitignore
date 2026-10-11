@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+
+# Работни контактни листове с всички 214 снимки (вкл. лични данни) — не се публикуват
+docs/photo-selection/
+.test-mail/
