@@ -332,7 +332,7 @@ const en: Dictionary = {
       {
         title: "Who receives it",
         body: [
-          "Your enquiry is sent as an email to the hosts through an email service provider acting as a processor. The website's hosting provider processes technical data (such as IP addresses) for security and abuse protection.",
+          "Your enquiry is sent as an email to the hosts through Resend (Resend, Inc., USA), acting as a processor. The website is served by Cloudflare (Cloudflare, Inc.), which processes technical data (such as IP addresses) for security and abuse protection. Where data is transferred outside the EU, these providers apply the EU Standard Contractual Clauses.",
         ],
       },
       {

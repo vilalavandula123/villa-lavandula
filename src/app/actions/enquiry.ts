@@ -5,6 +5,7 @@ import type { EnquiryState, EnquiryValues } from "@/lib/enquiry-types";
 import { validateEnquiry } from "@/lib/enquiry-validate";
 import { isMailConfigured, sendEnquiry } from "@/lib/mailer";
 import { markSent, rateLimit, wasSent } from "@/lib/rate-limit";
+import { edgeRateLimit } from "@/lib/cf-rate-limit";
 
 const FIELDS = ["arrival", "departure", "adults", "children", "childrenAges", "pets", "name", "email", "phone", "message"] as const;
 const MIN_FILL_MS = 2500;
@@ -41,11 +42,13 @@ export async function submitEnquiry(_prev: EnquiryState, formData: FormData): Pr
 
   // 6) Лимит на честотата по IP адрес.
   const h = await headers();
-  const ip = (h.get("x-forwarded-for")?.split(",")[0] || h.get("x-real-ip") || "unknown").trim();
-  if (!rateLimit(`enquiry:${ip}`)) return { status: "rate_limited", values, stamp };
+  const ip = (h.get("cf-connecting-ip") || h.get("x-forwarded-for")?.split(",")[0] || h.get("x-real-ip") || "unknown").trim();
+  if (!rateLimit(`enquiry:${ip}`) || !(await edgeRateLimit(`enquiry:${ip}`))) {
+    return { status: "rate_limited", values, stamp };
+  }
 
   try {
-    await sendEnquiry(result.data, locale);
+    await sendEnquiry(result.data, locale, submissionId || undefined);
     if (submissionId) markSent(submissionId);
     return { status: "success", stamp };
   } catch (err) {

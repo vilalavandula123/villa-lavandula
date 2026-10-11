@@ -8,6 +8,7 @@
  *
  * НЕ използвайте данните от примерната визитка в брандовото табло
  * (+359 888 123 456, Балчик, info@villalavandula.bg, www.villalavandula.bg) — те са измислени.
+ * Истинският домейн е villa-lavandula.com.
  */
 
 export type FactStatus = "extracted" | "confirmed";
@@ -70,11 +71,11 @@ export const site = {
   /** Басейнът НЕ е потвърден. Не добавяйте басейн в текстове/галерия, докато това не стане true. */
   poolConfirmed: false,
 
-  /** Ще се използва за canonical/sitemap. Собствен домейн НЕ е потвърден. Задава се чрез SITE_URL. */
-  siteUrl: process.env.SITE_URL ?? "http://localhost:3000",
+  /** Публичен адрес за canonical/sitemap. Може да се смени чрез SITE_URL (напр. при тестова версия). */
+  siteUrl: process.env.SITE_URL ?? "https://villa-lavandula.com",
 
-  /** Индексиране от търсачки — изключено, докато SITE_INDEXABLE=true не бъде зададено при публикуване. */
-  indexable: process.env.SITE_INDEXABLE === "true",
+  /** Индексиране от търсачки — включено. За тестова версия задайте SITE_INDEXABLE=false. */
+  indexable: process.env.SITE_INDEXABLE !== "false",
 
   privacy: {
     /** Администратор на лични данни — да се потвърди (физическо лице или фирма, адрес). */
