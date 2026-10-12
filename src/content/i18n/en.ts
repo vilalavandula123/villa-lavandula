@@ -45,9 +45,10 @@ const en: Dictionary = {
     title: "Villa Lavandula — a house in nature in Malko Tranovo, Bulgaria",
     heroTitleLine1: "Quiet, greenery",
     heroTitleLine2: "and time for yourselves.",
-    heroPlace: "Villa Lavandula · Malko Tranovo",
+    heroPlace: "A detached house for up to 8 guests · 3 bedrooms · Malko Tranovo village, Stara Zagora Province",
+    replyTime: "We reply within 12 hours with available dates, the price and terms.",
     heroText:
-      "A detached house in a large green garden — with a veranda, a barbecue and room for long conversations with family and friends.",
+      "A large green garden, a covered veranda, a barbecue and room for long conversations with family and friends.",
     factsLabel: "The house at a glance",
     facts: {
       wholeHouse: "The whole house",
@@ -62,14 +63,14 @@ const en: Dictionary = {
     introTitle: "A place for quiet days",
     introText: [
       "Villa Lavandula is a detached house in Malko Tranovo, surrounded by trees and a large landscaped garden. During your stay the whole house is yours.",
-      "There is a living and dining room with a fireplace, a fitted kitchen, three bedrooms, a covered veranda and a barbecue in the garden — enough space to be together and for everyone to find a quiet corner.",
+      "There is a living and dining room with a fireplace, a fitted kitchen, three bedrooms, a bathroom with toilet, a covered veranda and a barbecue in the garden — enough space to be together and for everyone to find a quiet corner.",
     ],
     introNote: "The whole house for your stay",
     previewTitle: "Explore the house",
     previewText: "Real photos of the house, the rooms and the garden.",
     houseTitle: "What to expect",
     houseCards: [
-      { title: "Bedrooms", text: "Three bedrooms with double beds plus a sofa bed — room for up to eight adults." },
+      { title: "Bedrooms & bathroom", text: "Three bedrooms with double beds plus a sofa bed — room for up to eight adults. One bathroom with toilet." },
       { title: "Living room & kitchen", text: "A living room with a fireplace and a dining table for the whole group, and a kitchen with oven and hob." },
       { title: "Garden & veranda", text: "A large green garden with shady seating, a covered veranda, a barbecue and an outdoor fireplace." },
     ],
@@ -83,7 +84,7 @@ const en: Dictionary = {
     ratingLink: "Reviews on Booking.com",
     enquiryTitle: "Availability and prices",
     enquiryText:
-      "Send us an enquiry with your dates and number of guests. We will reply personally about availability, price and terms. Sending an enquiry is not a confirmed booking.",
+      "Send us an enquiry with your dates and number of guests. Sending an enquiry is not a confirmed booking.",
     faqTitle: "Frequently asked questions",
     contactTitle: "Get in touch",
     contactText: "Call or write to us — we will be happy to answer your questions.",
@@ -96,11 +97,19 @@ const en: Dictionary = {
     },
     {
       q: "How do I find out if my dates are available?",
-      a: "Send an enquiry through the form or give us a call. We will reply about availability and the price for your dates.",
+      a: "Send an enquiry through the form or give us a call. We reply within 12 hours with available dates, the price and terms.",
     },
     {
       q: "Is my booking confirmed once I send an enquiry?",
       a: "No. An enquiry is not a booking. A booking is confirmed only after we have agreed the dates, price and terms with you personally.",
+    },
+    {
+      q: "How many bathrooms are there?",
+      a: "The house has one bathroom with toilet.",
+    },
+    {
+      q: "Can we bring a pet?",
+      a: "Pets are welcome at no extra charge. Please mention them in your enquiry.",
     },
     {
       q: "Where exactly is the house?",
@@ -115,8 +124,8 @@ const en: Dictionary = {
   housePage: {
     title: "The house",
     metaDescription:
-      "A detached house with three bedrooms, a living room with fireplace, a fitted kitchen, a veranda and a large garden in Malko Tranovo, Bulgaria.",
-    lead: "The whole house is yours — three bedrooms, a shared living room with fireplace, a kitchen, a veranda and a large landscaped garden.",
+      "A detached house with three bedrooms, a bathroom with toilet, a living room with fireplace, a fitted kitchen, a veranda and a large garden in Malko Tranovo, Bulgaria.",
+    lead: "The whole house is yours — three bedrooms, a bathroom with toilet, a shared living room with fireplace, a kitchen, a veranda and a large landscaped garden.",
     spacesTitle: "The spaces",
     spaces: [
       {
@@ -126,13 +135,13 @@ const en: Dictionary = {
       },
       {
         title: "Living & dining room",
-        text: "A bright living room with a fireplace, a corner sofa and a dining table for the whole group.",
-        photo: "living-dining-room",
+        text: "A bright living room with a fireplace, a corner seating area and a dining table by the large windows, with room for the whole group.",
+        photo: "dining-table-window",
       },
       {
         title: "Kitchen",
-        text: "A fitted kitchen for self-catering — from morning coffee to a shared dinner.",
-        photo: "kitchen",
+        text: "A fitted kitchen with oven and hob, open to the dining area — from morning coffee to a shared dinner.",
+        photo: "dining-fireplace-kitchen",
       },
       {
         title: "Garden & veranda",
@@ -141,23 +150,67 @@ const en: Dictionary = {
       },
     ],
     bedsTitle: "Sleeping arrangements",
+    bathTitle: "Bathroom",
+    bathText: "One bathroom with toilet.",
     amenitiesTitle: "Amenities",
     amenityGroups: [
       {
-        title: "Kitchen",
-        items: ["Oven and hob", "Fridge", "Coffee machine and kettle", "Toaster", "Kitchenware", "Dining table", "High chair"],
+        title: "Kitchen & dining",
+        items: [
+          "Oven and hob",
+          "Fridge",
+          "Coffee machine",
+          "Toaster",
+          "Electric kettle",
+          "Crockery and kitchenware",
+          "Dining table",
+          "High chair",
+        ],
       },
       {
         title: "Comfort",
-        items: ["Free Wi-Fi", "Air conditioning", "Heating", "Fireplace in the living room", "TV with cable channels", "Bed linen and towels", "Washing machine and clothes dryer"],
+        items: [
+          "Air conditioning",
+          "Heating",
+          "Fireplace in the living room",
+          "Flat-screen TV with cable channels",
+          "One bathroom with toilet",
+          "Bed linen and towels",
+          "Clothes storage",
+          "Washing machine",
+        ],
       },
       {
-        title: "Outdoors",
-        items: ["Large landscaped garden", "Covered veranda", "Barbecue", "Outdoor fireplace", "Garden furniture and outdoor dining", "Balcony and terrace"],
+        title: "Garden & outdoors",
+        items: [
+          "Garden and courtyard",
+          "Covered veranda",
+          "Balcony and terrace",
+          "Garden furniture",
+          "Picnic area and outdoor dining",
+          "Barbecue",
+          "Outdoor fireplace",
+          "Sun loungers",
+        ],
+      },
+      {
+        title: "Games",
+        items: ["Board games", "Darts", "Badminton equipment"],
       },
       {
         title: "Practical",
-        items: ["Private entrance", "Free public parking nearby", "Baby cot on request"],
+        items: [
+          "Free Wi-Fi throughout the house",
+          "Free public parking nearby, no reservation needed",
+          "Private entrance",
+          "Pets allowed at no extra charge",
+          "Non-smoking rooms and a designated smoking area",
+          "Baby cot on request",
+        ],
+      },
+      {
+        title: "Languages spoken",
+        items: ["Bulgarian", "English", "French", "Russian"],
       },
     ],
     amenitiesNote: "If something matters for your stay, mention it in your enquiry and we will give you a specific answer.",
@@ -166,7 +219,7 @@ const en: Dictionary = {
   galleryPage: {
     title: "Gallery",
     metaDescription: "Photos of Villa Lavandula — the house, bedrooms, living room and kitchen, garden and veranda.",
-    lead: "Real photos of the house, the rooms and the garden through the seasons.",
+    lead: "A walk through the house in real photos — from the front and the living room, through the kitchen and bedrooms, to the veranda and garden.",
     filterLabel: "Show photos",
     all: "All",
     categories: {
@@ -199,6 +252,23 @@ const en: Dictionary = {
       { name: "Svoboda railway station", text: "The nearest railway station.", distance: "about 4 km" },
       { name: "Stara Zagora", text: "Regional History Museum and Art Gallery.", distance: "about 25 km" },
     ],
+    arrivalTitle: "Arriving by plane",
+    arrivalLead: "The nearest airports are in Plovdiv and Sofia. Approximate driving distances:",
+    airports: {
+      plovdiv: "Plovdiv Airport",
+      sofia: "Sofia Airport",
+    },
+    km: (n: number) => `about ${n} km`,
+    drive: (min: number) => {
+      const h = Math.floor(min / 60);
+      const m = min % 60;
+      if (h === 0) return `about ${m} min by car`;
+      return `about ${h} h${m ? ` ${m} min` : ""} by car`;
+    },
+    arrivalNote: (date: string) =>
+      `Distances and times follow the recommended driving route in Google Maps from the centre of Malko Tranovo village (checked on ${date}). Times are without traffic and depend on the route and traffic.`,
+    wikiLink: "More about Malko Tranovo village on Wikipedia",
+    wikiNote: "An encyclopaedia article on Bulgarian Wikipedia (in Bulgarian) — not an official village website.",
     outdoorsTitle: "Outdoors",
     outdoorsText:
       "The countryside around the village is good for walking and cycling. In the garden there is room for games, rest in the shade and evenings by the fire.",
@@ -210,11 +280,11 @@ const en: Dictionary = {
     title: "Dates & terms",
     metaDescription:
       "Ask about available dates at Villa Lavandula. We reply personally about availability, price and terms.",
-    lead: "Send us your preferred dates and number of guests — we will reply personally about availability, price and terms.",
+    lead: "Send us your preferred dates and number of guests — we will reply personally.",
     howTitle: "How it works",
     how: [
       { title: "You send an enquiry", text: "With dates, number of guests and how to reach you." },
-      { title: "We reply personally", text: "We confirm availability and send you the price and terms." },
+      { title: "We reply within 12 hours", text: "With available dates, the price and terms." },
       { title: "We agree your stay", text: "The booking is confirmed only once we have agreed all the details." },
     ],
     pricesTitle: "Prices",
@@ -225,15 +295,16 @@ const en: Dictionary = {
       checkIn: (v: string) => `Check-in: ${v}, at a time agreed in advance`,
       checkOut: (v: string) => `Check-out: ${v}`,
       children: "Children are welcome; baby cot (ages 0–3) on request",
-      pets: "Travelling with a pet? Please mention it in your enquiry",
-      smoking: "Smoking is not allowed inside the house",
+      pets: "Pets are welcome at no extra charge. Please mention them in your enquiry.",
+      smoking: "Smoking is not allowed inside the house; there is a designated smoking area",
     },
     bookingAlt: "Prefer an intermediary? The house is also listed on Booking.com.",
   },
 
   form: {
     title: "Ask about dates",
-    disclaimer: "Sending an enquiry does not confirm a booking. We will contact you about availability, price and terms.",
+    replyTime: "We reply within 12 hours with available dates, the price and terms.",
+    disclaimer: "Sending an enquiry is not a confirmed booking.",
     required: "required",
     optional: "optional",
     arrival: "Arrival date",
@@ -259,7 +330,7 @@ const en: Dictionary = {
     errorSummary: "Please correct the following fields:",
     success: {
       title: "Enquiry received",
-      text: "Thank you! We will reply personally about availability, price and terms. This is not a confirmed booking.",
+      text: "Thank you! We have received your enquiry and will reply within 12 hours with available dates, the price and terms. Your enquiry is not yet a confirmed booking.",
       another: "New enquiry",
     },
     notConfigured: {

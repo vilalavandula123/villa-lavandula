@@ -88,7 +88,7 @@ export async function sendEnquiry(d: ParsedEnquiry, locale: "bg" | "en", submiss
           `Здравейте, ${d.name},`,
           "",
           `получихме запитването ви за ${fmt(d.arrival)}–${fmt(d.departure)} във Вила Лавандула.`,
-          "Това НЕ е потвърдена резервация. Ще ви отговорим лично за наличност, цена и условия.",
+          "Ще ви отговорим до 12 часа с информация за свободните дати, цената и условията. Запитването НЕ е потвърдена резервация.",
           "",
           `Телефон: ${site.contact.phoneDisplay.value}`,
         ]
@@ -96,7 +96,7 @@ export async function sendEnquiry(d: ParsedEnquiry, locale: "bg" | "en", submiss
           `Hello ${d.name},`,
           "",
           `we have received your enquiry for ${fmt(d.arrival)}–${fmt(d.departure)} at Villa Lavandula.`,
-          "This is NOT a confirmed booking. We will reply personally about availability, price and terms.",
+          "We will reply within 12 hours with available dates, the price and terms. Your enquiry is NOT a confirmed booking.",
           "",
           `Phone: ${site.contact.phoneDisplay.value}`,
         ];

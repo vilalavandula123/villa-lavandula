@@ -41,6 +41,8 @@ export const site = {
   links: {
     booking: "https://www.booking.com/hotel/bg/vila-lavandula.bg.html",
     facebook: "https://www.facebook.com/profile.php?id=100057594543383",
+    /** Енциклопедична статия за селото (не е официален сайт на селото). */
+    wikipediaVillage: "https://bg.wikipedia.org/wiki/Малко_Тръново",
   },
 
   facts: {
@@ -53,6 +55,22 @@ export const site = {
       status: "extracted",
       source: "Booking",
     } as Fact<{ bg: string; en: string }>,
+    /** Една баня, в която е и тоалетната (не две отделни помещения). */
+    bathroom: {
+      value: { bg: "1 баня с тоалетна", en: "1 bathroom with toilet" },
+      status: "confirmed",
+      source: "Задание от 12.10.2026",
+    } as Fact<{ bg: string; en: string }>,
+  },
+
+  /**
+   * Пътни разстояния с кола от центъра на с. Малко Тръново (точният адрес на къщата не е публикуван).
+   * Проверено в Google Maps на 12.10.2026, препоръчаният маршрут. Времето е без трафик и е ориентировъчно.
+   */
+  airports: {
+    plovdiv: { km: 80, minutes: 55 },
+    sofia: { km: 200, minutes: 110 },
+    checkedOn: "2026-10-12",
   },
 
   /** Правила от обявата в Booking. Показват се на „Дати и условия“ с бележка, че се потвърждават при отговора. */

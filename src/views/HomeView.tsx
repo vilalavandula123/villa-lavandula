@@ -102,23 +102,23 @@ export default function HomeView({ locale }: { locale: Locale }) {
   const d = getDictionary(locale);
   const t = d.home;
   const hero = getPhoto("house-garden-summer");
-  const introA = getPhoto("bedroom-butterflies");
-  const introB = getPhoto("living-dining-room");
+  const introA = getPhoto("bedroom-window-seating");
+  const introB = getPhoto("dining-fireplace-kitchen");
 
   return (
     <>
       {/* ---------- Hero: текст вляво, снимка вдясно ---------- */}
       <section className="relative" aria-labelledby="hero-title">
         <div className="lg:grid lg:min-h-[600px] lg:grid-cols-[minmax(0,44fr)_minmax(0,56fr)] lg:items-center xl:min-h-[640px]">
-          <div className="container-site relative z-10 pb-8 pt-4 lg:!max-w-none lg:py-16 lg:pl-[max(56px,calc((100vw-1200px)/2))] lg:pr-12">
+          <div className="container-site relative z-10 pb-5 pt-3 lg:!max-w-none lg:py-16 lg:pl-[max(56px,calc((100vw-1200px)/2))] lg:pr-12">
             <h1 id="hero-title" className="text-[2.35rem] leading-[1.08] sm:text-5xl lg:text-[clamp(2.6rem,3.6vw,3.7rem)]">
               <span className="block">{t.heroTitleLine1}</span>
               <span className="block">{t.heroTitleLine2}</span>
             </h1>
-            <p className="mt-4 font-serif text-lg text-ink-soft lg:text-xl">{t.heroPlace}</p>
-            <span className="rule-short my-6" aria-hidden="true" />
-            <p className="max-w-md text-[1.0625rem] lg:text-lg">{t.heroText}</p>
-            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <p className="mt-3 max-w-xl font-serif text-[1.0625rem] leading-snug text-ink-soft sm:text-lg lg:mt-4 lg:text-xl">{t.heroPlace}</p>
+            <span className="rule-short my-4 hidden sm:block lg:my-6" aria-hidden="true" />
+            <p className="hidden max-w-md text-[1.0625rem] sm:block lg:text-lg">{t.heroText}</p>
+            <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 lg:mt-7">
               <Link href={href(locale, "enquiry", "zapitvane-forma")} className="btn btn-primary">
                 {d.cta.enquire} <ArrowRight />
               </Link>
@@ -126,6 +126,7 @@ export default function HomeView({ locale }: { locale: Locale }) {
                 {d.cta.seeHouse}
               </Link>
             </div>
+            <p className="mt-2 max-w-md text-[15px] leading-snug text-ink-soft sm:mt-3">{t.replyTime}</p>
           </div>
 
           <div className="container-site lg:!max-w-none lg:!px-0 lg:self-stretch">
@@ -250,6 +251,7 @@ export default function HomeView({ locale }: { locale: Locale }) {
           <div className="lg:max-w-[46rem] lg:flex-1">
             <SectionTitle id="dates-title" className="!mb-5">{t.enquiryTitle}</SectionTitle>
             <p className="max-w-2xl text-lg">{t.enquiryText}</p>
+            <p className="mt-3 max-w-2xl text-ink-soft">{t.replyTime}</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link href={href(locale, "enquiry", "zapitvane-forma")} className="btn btn-primary">
