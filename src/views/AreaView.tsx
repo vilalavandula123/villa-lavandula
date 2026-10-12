@@ -4,7 +4,7 @@ import { ArrowRight, External, MapPin } from "@/components/Icons";
 import { ExternalLink, PageIntro, SectionTitle } from "@/components/ui";
 import { getPhoto } from "@/content/gallery";
 import { mapsUrl, site } from "@/content/site";
-import { getDictionary } from "@/lib/i18n";
+import { formatDate, getDictionary } from "@/lib/i18n";
 import { href, type Locale } from "@/lib/routes";
 
 export default function AreaView({ locale }: { locale: Locale }) {
@@ -36,8 +36,30 @@ export default function AreaView({ locale }: { locale: Locale }) {
             </ul>
             <p className="mt-3 text-sm text-ink-soft">{t.nearbyNote}</p>
 
+            <h2 className="mt-14 mb-4 text-3xl">{t.arrivalTitle}</h2>
+            <p className="mb-4 max-w-xl text-lg">{t.arrivalLead}</p>
+            <ul className="divide-y divide-line border-y border-line">
+              {(["plovdiv", "sofia"] as const).map((k) => (
+                <li key={k} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                  <h3 className="font-sans text-lg font-semibold">{t.airports[k]}</h3>
+                  <p className="shrink-0 text-ink-soft sm:text-right">
+                    <span className="font-serif text-lg text-olive">{t.km(site.airports[k].km)}</span>
+                    <span className="block text-[15px]">{t.drive(site.airports[k].minutes)}</span>
+                  </p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-sm text-ink-soft">{t.arrivalNote(formatDate(site.airports.checkedOn, locale))}</p>
+
             <h2 className="mt-14 mb-4 text-3xl">{t.outdoorsTitle}</h2>
             <p className="max-w-xl text-lg">{t.outdoorsText}</p>
+
+            <p className="mt-10">
+              <ExternalLink href={site.links.wikipediaVillage} srLabel={d.a11y.opensExternal} className="link inline-flex min-h-11 items-center gap-1.5">
+                {t.wikiLink} <External />
+              </ExternalLink>
+              <span className="block text-sm text-ink-soft">{t.wikiNote}</span>
+            </p>
           </div>
           <div className="space-y-8">
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-photo)] lg:rounded-tl-[6rem]">
@@ -59,7 +81,10 @@ export default function AreaView({ locale }: { locale: Locale }) {
 
       <section className="bg-sand">
         <div className="container-site flex flex-col items-start gap-5 py-12 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-serif text-2xl">{d.home.enquiryTitle}</p>
+          <div>
+            <p className="font-serif text-2xl">{d.home.enquiryTitle}</p>
+            <p className="mt-1 text-ink-soft">{d.home.replyTime}</p>
+          </div>
           <Link href={href(locale, "enquiry", "zapitvane-forma")} className="btn btn-primary">
             {d.cta.enquire} <ArrowRight />
           </Link>

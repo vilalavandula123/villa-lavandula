@@ -50,12 +50,18 @@ export default function HouseView({ locale }: { locale: Locale }) {
 
       <section className="border-t border-line/70 bg-paper section-y" aria-labelledby="amen-title">
         <div className="container-site">
-          <div className="mb-12 rounded-2xl bg-olive-soft p-6 lg:p-8">
-            <h2 className="mb-2 text-2xl">{t.bedsTitle}</h2>
-            <p className="text-lg">{site.facts.beds.value[locale]}</p>
+          <div className="mb-12 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl bg-olive-soft p-6 lg:p-8">
+              <h2 className="mb-2 text-2xl">{t.bedsTitle}</h2>
+              <p className="text-lg">{site.facts.beds.value[locale]}</p>
+            </div>
+            <div className="rounded-2xl bg-olive-soft p-6 lg:p-8">
+              <h2 className="mb-2 text-2xl">{t.bathTitle}</h2>
+              <p className="text-lg">{t.bathText}</p>
+            </div>
           </div>
           <SectionTitle id="amen-title">{t.amenitiesTitle}</SectionTitle>
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {t.amenityGroups.map((g) => (
               <div key={g.title}>
                 <h3 className="mb-4 border-b border-line pb-2 text-xl">{g.title}</h3>

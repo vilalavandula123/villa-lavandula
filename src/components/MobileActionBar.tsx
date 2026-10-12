@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Phone } from "./Icons";
 
 /**
  * Долна лента на телефон: „Запитване за дати“ + обаждане.
  * Скрива се, докато е фокусирано поле за въвеждане (екранната клавиатура), за да не закрива формата.
+ * На страницата с формата бутонът „Запитване за дати“ не се показва (води към същата форма) — остава само обаждането.
  */
 export default function MobileActionBar({
   enquiryHref,
@@ -18,6 +20,8 @@ export default function MobileActionBar({
   labels: { enquire: string; call: string; region: string };
 }) {
   const [hidden, setHidden] = useState(false);
+  const pathname = usePathname();
+  const onEnquiryPage = pathname === enquiryHref.split("#")[0];
 
   useEffect(() => {
     const isField = (el: EventTarget | null) =>
@@ -44,10 +48,15 @@ export default function MobileActionBar({
       inert={hidden || undefined}
     >
       <div className="mx-auto flex max-w-md gap-2.5">
-        <Link href={enquiryHref} className="btn btn-primary !min-h-12 flex-1 whitespace-nowrap !px-3 text-[15px]">
-          {labels.enquire}
-        </Link>
-        <a href={phoneHref} className="btn btn-secondary !min-h-12 whitespace-nowrap !px-3 text-[15px]">
+        {!onEnquiryPage && (
+          <Link href={enquiryHref} className="btn btn-primary !min-h-12 flex-1 whitespace-nowrap !px-3 text-[15px]">
+            {labels.enquire}
+          </Link>
+        )}
+        <a
+          href={phoneHref}
+          className={`btn btn-secondary !min-h-12 whitespace-nowrap !px-3 text-[15px] ${onEnquiryPage ? "flex-1" : ""}`}
+        >
           <Phone /> {labels.call}
         </a>
       </div>

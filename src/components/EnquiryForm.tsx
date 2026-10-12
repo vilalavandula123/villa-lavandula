@@ -176,9 +176,10 @@ export default function EnquiryForm({
 
   return (
     <form key={state.stamp} action={action} noValidate aria-describedby={`${uid}-disc`} className="space-y-6">
-      <p id={`${uid}-disc`} className="rounded-xl border-l-4 border-lavender bg-paper px-4 py-3 text-[15px]">
-        {f.disclaimer}
-      </p>
+      <div id={`${uid}-disc`} className="rounded-xl border-l-4 border-lavender bg-paper px-4 py-3 text-[15px]">
+        <p className="font-semibold">{f.replyTime}</p>
+        <p className="mt-1">{f.disclaimer}</p>
+      </div>
 
       {!mailConfigured && (
         <div className="rounded-xl border border-[#a8842f]/50 bg-[#fbf3df] px-4 py-3 text-[15px]">
