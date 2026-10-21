@@ -8,7 +8,9 @@ import { site } from "@/content/site";
 import { getDictionary } from "@/lib/i18n";
 import { href, isLocale, locales } from "@/lib/routes";
 
-export const dynamicParams = false;
+// true: началните страници /bg и /en могат да се генерират и при заявка, ако кешът не ги намери (OpenNext на Cloudflare).
+// Невалиден език пак дава 404 чрез isLocale() + notFound().
+export const dynamicParams = true;
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
