@@ -1,5 +1,7 @@
 // Създава оптимизирани WebP варианти на снимките и логото в public/_img/.
-// Пуска се ръчно след добавяне/смяна на снимка:  npm run images
+// Пуска се автоматично преди всеки build (npm run build), а и ръчно:  npm run images
+// Снимките, качени през Pages CMS (напр. от телефон), първо се нормализират: завъртане според EXIF,
+// премахване на EXIF (вкл. GPS) и смаляване до 2400 px. Размерите се записват в src/lib/image-dims.json.
 // (Хостингът в Cloudflare не оптимизира снимки сам — затова вариантите са готови файлове.)
 import { readdir, mkdir, stat } from "node:fs/promises";
 import path from "node:path";
@@ -13,6 +15,30 @@ const sources = [
   { dir: "public/photos", quality: 60 },
   { dir: "public/brand", quality: 88 },
 ];
+
+const MAX_SIDE = 2400;
+const dims = {};
+const photosDir = path.join(ROOT, "public/photos");
+const { writeFile, readFile } = await import("node:fs/promises");
+for (const file of await readdir(photosDir)) {
+  if (!/\.(jpe?g|png|webp)$/i.test(file)) continue;
+  const src = path.join(photosDir, file);
+  let meta = await sharp(src).metadata();
+  const needsFix = meta.exif || (meta.orientation ?? 1) !== 1 || Math.max(meta.width, meta.height) > MAX_SIDE;
+  if (needsFix && /\.jpe?g$/i.test(file)) {
+    const buf = await sharp(await readFile(src))
+      .rotate()
+      .resize({ width: MAX_SIDE, height: MAX_SIDE, fit: "inside", withoutEnlargement: true })
+      .jpeg({ quality: 86, mozjpeg: true })
+      .toBuffer();
+    await writeFile(src, buf);
+    meta = await sharp(src).metadata();
+    console.log(`images: normalized ${file}`);
+  }
+  const swap = (meta.orientation ?? 1) >= 5;
+  dims[`/photos/${file}`] = swap ? [meta.height, meta.width] : [meta.width, meta.height];
+}
+await writeFile(path.join(ROOT, "src/lib/image-dims.json"), "{\n" + Object.entries(dims).map(([k, v]) => `  ${JSON.stringify(k)}: [${v}]`).join(",\n") + "\n}\n");
 
 await mkdir(OUT, { recursive: true });
 let n = 0;
@@ -45,6 +71,5 @@ for (const { dir } of sources) {
   }
 }
 for (const k of Object.keys(variants)) variants[k].sort((a, b) => a - b);
-const { writeFile } = await import("node:fs/promises");
 await writeFile(path.join(ROOT, "src/lib/image-variants.json"), JSON.stringify(variants));
 console.log(`images: ${n} new variants; ${Object.keys(variants).length} images listed`);

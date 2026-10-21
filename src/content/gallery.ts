@@ -1,8 +1,12 @@
-// Галерия: подбрани реални снимки на имота.
-// Оригиналите са в materials/photos/ и newpics/ (не се променят). Тук са оптимизирани копия в public/photos/ (без EXIF).
-// Снимките, които вече не се показват, остават в public/photos/ — просто не са в списъка по-долу.
-// За да добавите снимка: сложете JPG в public/photos/, добавете запис по-долу (размерите в пиксели са задължителни).
+// Снимки на имота.
+// • Галерията (страница „Галерия“) се управлява от src/content/gallery.json — собственикът я редактира
+//   през Pages CMS (app.pagescms.org): добавя, подрежда и маха снимки. Размерите се четат автоматично
+//   при build (scripts/build-images.mjs → src/lib/image-dims.json).
+// • sitePhotos по-долу са снимките, които другите страници ползват по id (начало, „Къщата“, „Районът“).
+//   Те не зависят от галерията — махането на снимка от галерията не ги засяга.
 // rights: "pending-owner-confirmation" — правото за публикуване трябва да се потвърди от собственика.
+import galleryData from "./gallery.json";
+import dims from "@/lib/image-dims.json";
 
 export type GalleryCategory = "house" | "bedrooms" | "living" | "garden" | "atmosphere";
 
@@ -13,15 +17,15 @@ export type Photo = {
   height: number;
   category: GalleryCategory;
   alt: { bg: string; en: string };
-  caption: { bg: string; en: string };
-  source: { file: string; page: string };
-  rights: "pending-owner-confirmation" | "confirmed";
+  caption?: { bg: string; en: string };
+  source?: { file: string; page: string };
+  rights?: "pending-owner-confirmation" | "confirmed";
 };
 
 // Редът следва разходка из къщата: фасада и вход → хол → кухня и трапезария → спални → баня → веранда и двор → атмосфера.
 export const categoryOrder: GalleryCategory[] = ["house", "living", "bedrooms", "garden", "atmosphere"];
 
-export const photos: Photo[] = [
+const sitePhotos: Photo[] = [
   {
     id: "house-garden-summer",
     src: "/photos/house-garden-summer.jpg",
@@ -376,8 +380,30 @@ export const photos: Photo[] = [
   },
 ];
 
+type GalleryEntry = { image?: string; category?: string; alt_bg?: string; alt_en?: string };
+
+const categories: GalleryCategory[] = ["house", "bedrooms", "living", "garden", "atmosphere"];
+const dimTable = dims as Record<string, number[]>;
+
+/** "/photos/x.jpg", "photos/x.jpg" и "public/photos/x.jpg" → "/photos/x.jpg" */
+const normalizeSrc = (v: string) => "/" + v.trim().replace(/^\/+/, "").replace(/^public\//, "");
+
+/** Снимките в галерията, в реда от gallery.json. Записи без съществуващ файл се пропускат. */
+export const photos: Photo[] = (galleryData as GalleryEntry[]).flatMap((e, i) => {
+  if (!e.image) return [];
+  const src = normalizeSrc(e.image);
+  const size = dimTable[src];
+  if (!size) return [];
+  const category = categories.includes(e.category as GalleryCategory) ? (e.category as GalleryCategory) : "atmosphere";
+  const known = sitePhotos.find((p) => p.src === src);
+  const bg = e.alt_bg?.trim() || known?.alt.bg || "Снимка от Вила Лавандула";
+  const en = e.alt_en?.trim() || known?.alt.en || "Photo of Villa Lavandula";
+  const id = `${src.replace(/^.*\//, "").replace(/\.[^.]+$/, "")}-${i}`;
+  return [{ id, src, width: size[0], height: size[1], category, alt: { bg, en } }];
+});
+
 export const getPhoto = (id: string): Photo => {
-  const p = photos.find((x) => x.id === id);
+  const p = sitePhotos.find((x) => x.id === id);
   if (!p) throw new Error(`Unknown photo: ${id}`);
   return p;
 };

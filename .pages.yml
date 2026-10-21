@@ -1,0 +1,40 @@
+media:
+  input: public/photos
+  output: /photos
+  extensions: [jpg, jpeg, png]
+  rename: safe
+
+content:
+  - name: gallery
+    label: Галерия
+    type: file
+    path: src/content/gallery.json
+    format: json
+    list: true
+    fields:
+      - name: image
+        label: Снимка
+        type: image
+        required: true
+      - name: category
+        label: Категория
+        type: select
+        default: garden
+        options:
+          values:
+            - name: house
+              label: Къщата
+            - name: living
+              label: Хол и кухня
+            - name: bedrooms
+              label: Спални
+            - name: garden
+              label: Двор и веранда
+            - name: atmosphere
+              label: Атмосфера
+      - name: alt_bg
+        label: Кратко описание (BG, по желание)
+        type: string
+      - name: alt_en
+        label: Short description (EN, optional)
+        type: string

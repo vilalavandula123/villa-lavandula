@@ -1,0 +1,194 @@
+[
+  {
+    "image": "/photos/house-garden-summer.jpg",
+    "category": "house",
+    "alt_bg": "Къщата с верандата сред дърветата и зеления двор през лятото",
+    "alt_en": "The house and veranda among the trees and green garden in summer"
+  },
+  {
+    "image": "/photos/house-garden-trees.jpg",
+    "category": "house",
+    "alt_bg": "Къщата, верандата и стълбите към двора, гледани през дърветата",
+    "alt_en": "The house, veranda and steps to the garden seen through the trees"
+  },
+  {
+    "image": "/photos/house-lawn-spring.jpg",
+    "category": "house",
+    "alt_bg": "Двуетажната къща зад широка тревна площ напролет",
+    "alt_en": "The two-storey house behind a wide lawn in spring"
+  },
+  {
+    "image": "/photos/gate-stone-wall.jpg",
+    "category": "house",
+    "alt_bg": "Ъгълът на къщата и каменна ограда с малка покрита дървена врата, пред тях зелена трева",
+    "alt_en": "The corner of the house and a stone wall with a small roofed wooden door, with green grass in front"
+  },
+  {
+    "image": "/photos/dining-table-window.jpg",
+    "category": "living",
+    "alt_bg": "Дълга трапезна маса до прозорците и камината",
+    "alt_en": "A long dining table by the windows and fireplace"
+  },
+  {
+    "image": "/photos/living-room-fireplace.jpg",
+    "category": "living",
+    "alt_bg": "Хол с камина, трапезна маса, сгъваеми дървени столове и тапициран ъглов кът пред големите прозорци",
+    "alt_en": "A living room with a fireplace, a dining table, folding wooden chairs and upholstered corner seating by the large windows"
+  },
+  {
+    "image": "/photos/living-window-corner.jpg",
+    "category": "living",
+    "alt_bg": "Трапезна маса и тапициран ъглов кът пред два прозореца към зеленината, вляво камината",
+    "alt_en": "A dining table and upholstered corner seating by two windows onto the greenery, with the fireplace on the left"
+  },
+  {
+    "image": "/photos/dining-fireplace-kitchen.jpg",
+    "category": "living",
+    "alt_bg": "Трапезна маса пред камината, а в дъното кухнята с дървени шкафове, фурна и котлони",
+    "alt_en": "A dining table in front of the fireplace, with the kitchen, wooden cupboards, oven and hob behind"
+  },
+  {
+    "image": "/photos/bedroom-double-window.jpg",
+    "category": "bedrooms",
+    "alt_bg": "Спалня с двойно легло, климатик и прозорец със завеси",
+    "alt_en": "A bedroom with a double bed, air conditioning and a curtained window"
+  },
+  {
+    "image": "/photos/bedroom-double-linen.jpg",
+    "category": "bedrooms",
+    "alt_bg": "Двойно легло с оправено спално бельо и сгънати хавлии",
+    "alt_en": "A made-up double bed with folded towels"
+  },
+  {
+    "image": "/photos/bedroom-double-towels.jpg",
+    "category": "bedrooms",
+    "alt_bg": "Двойно легло с лилаво спално бельо, сгънати кърпи, две нощни шкафчета и картина над леглото",
+    "alt_en": "A double bed with lilac bedding, folded towels, two bedside cabinets and a picture above the bed"
+  },
+  {
+    "image": "/photos/bedroom-bay-window.jpg",
+    "category": "bedrooms",
+    "alt_bg": "Спалня с двойно легло, полилей, климатик и еркерен прозорец с два стола и масичка",
+    "alt_en": "A bedroom with a double bed, chandelier, air conditioning and a bay window with two chairs and a small table"
+  },
+  {
+    "image": "/photos/bedroom-window-seating.jpg",
+    "category": "bedrooms",
+    "alt_bg": "Два тапицирани стола и кръгла дървена масичка пред прозорец с прозрачни завеси",
+    "alt_en": "Two upholstered chairs and a round wooden table by a window with sheer curtains"
+  },
+  {
+    "image": "/photos/bedroom-armchair.jpg",
+    "category": "bedrooms",
+    "alt_bg": "Стая с легло, фотьойл и закачалка",
+    "alt_en": "A room with a bed, armchair and coat stand"
+  },
+  {
+    "image": "/photos/bedroom-double-niche.jpg",
+    "category": "bedrooms",
+    "alt_bg": "Двойно легло с кърпи, кафяв фотьойл и стенна ниша с книги и дърворезба, под с плочки",
+    "alt_en": "A double bed with towels, a brown armchair and a wall niche with books and a woodcarving, on a tiled floor"
+  },
+  {
+    "image": "/photos/bedroom-two-beds-butterflies.jpg",
+    "category": "bedrooms",
+    "alt_bg": "Стая с тясно легло и двойно легло, дървен под и две картини с пеперуди",
+    "alt_en": "A room with a narrow bed and a double bed, wooden floor and two butterfly pictures"
+  },
+  {
+    "image": "/photos/bedroom-narrow-bed.jpg",
+    "category": "bedrooms",
+    "alt_bg": "Тясно легло с жълто-зелена рамка до стената и част от двойно легло, дървен под и картина с пеперуда",
+    "alt_en": "A narrow bed with a yellow-green frame against the wall and part of a double bed, wooden floor and a butterfly picture"
+  },
+  {
+    "image": "/photos/hallway-bathroom-door.jpg",
+    "category": "house",
+    "alt_bg": "Облицован с дърво коридор с дървено стълбище и врата с табела WC",
+    "alt_en": "A wood-panelled hallway with a wooden staircase and a door marked WC"
+  },
+  {
+    "image": "/photos/wooden-veranda-bench.jpg",
+    "category": "garden",
+    "alt_bg": "Дървена пейка в облицован с дърво кът на верандата",
+    "alt_en": "A wooden bench in a wood-panelled corner of the veranda"
+  },
+  {
+    "image": "/photos/outdoor-dining-evening.jpg",
+    "category": "garden",
+    "alt_bg": "Маса за хранене на открито под навес вечер, с външна камина",
+    "alt_en": "An outdoor dining table under a roof in the evening, with an outdoor fireplace"
+  },
+  {
+    "image": "/photos/stone-patio-pergola.jpg",
+    "category": "garden",
+    "alt_bg": "Каменен двор с лоза върху пергола и саксии с цветя",
+    "alt_en": "A stone patio with a vine-covered pergola and flower pots"
+  },
+  {
+    "image": "/photos/terrace-garden-view.jpg",
+    "category": "garden",
+    "alt_bg": "Каменна тераса над двора с поляна и високи дървета",
+    "alt_en": "A stone terrace above the garden with a lawn and tall trees"
+  },
+  {
+    "image": "/photos/terrace-white-roses.jpg",
+    "category": "garden",
+    "alt_bg": "Каменната тераса, бял катерлив розов храст и зелената поляна в двора",
+    "alt_en": "The stone terrace, a white climbing rose and the green lawn in the garden"
+  },
+  {
+    "image": "/photos/lawn-and-trees.jpg",
+    "category": "garden",
+    "alt_bg": "Голяма поляна с иглолистни и широколистни дървета",
+    "alt_en": "A large lawn with conifers and broadleaf trees"
+  },
+  {
+    "image": "/photos/garden-stone-path.jpg",
+    "category": "garden",
+    "alt_bg": "Каменна пътека под сянката на дърветата",
+    "alt_en": "A stone path in the shade of the trees"
+  },
+  {
+    "image": "/photos/garden-bench-shade.jpg",
+    "category": "garden",
+    "alt_bg": "Пейка до голямо дърво в засенчен кът на двора",
+    "alt_en": "A bench by a large tree in a shady corner of the garden"
+  },
+  {
+    "image": "/photos/spring-path-tulips.jpg",
+    "category": "garden",
+    "alt_bg": "Каменна пътека с лалета напролет",
+    "alt_en": "A stone path lined with spring tulips"
+  },
+  {
+    "image": "/photos/barbecue-grill.jpg",
+    "category": "atmosphere",
+    "alt_bg": "Месо и наденици на скара в двора",
+    "alt_en": "Meat and sausages on the barbecue in the garden"
+  },
+  {
+    "image": "/photos/outdoor-fireplace.jpg",
+    "category": "atmosphere",
+    "alt_bg": "Запален огън във външната каменна камина",
+    "alt_en": "A fire burning in the outdoor stone fireplace"
+  },
+  {
+    "image": "/photos/spring-table-flowers.jpg",
+    "category": "atmosphere",
+    "alt_bg": "Празнична маса с цветя, козунак и боядисани яйца пред камината",
+    "alt_en": "A festive table with flowers, sweet bread and painted eggs by the fireplace"
+  },
+  {
+    "image": "/photos/easter-coffee-table.jpg",
+    "category": "atmosphere",
+    "alt_bg": "Чаша кафе с надпис Lavender, ваза с лалета, козунак и боядисани яйца на масата до прозореца",
+    "alt_en": "A coffee mug reading Lavender, a vase of tulips, sweet bread and dyed eggs on the table by the window"
+  },
+  {
+    "image": "/photos/garden-bench-afternoon.jpg",
+    "category": "atmosphere",
+    "alt_bg": "Метална пейка в зеления двор следобед",
+    "alt_en": "A metal bench in the green garden in the afternoon"
+  }
+]
