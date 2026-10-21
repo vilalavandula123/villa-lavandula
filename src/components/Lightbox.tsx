@@ -136,7 +136,6 @@ export default function Lightbox({
                 className="fade-in object-contain"
               />
             </div>
-            <figcaption className="px-4 py-3 text-center text-[15px] text-paper/90">{photo.caption[locale]}</figcaption>
 
             {n > 1 && (
               <>

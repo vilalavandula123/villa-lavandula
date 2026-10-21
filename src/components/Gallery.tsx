@@ -102,7 +102,6 @@ export default function Gallery({ locale }: { locale: Locale }) {
                 className="aspect-[4/5]"
                 eager={i < 2}
               />
-              <figcaption className="mt-2 text-sm text-ink-soft">{p.caption[locale]}</figcaption>
             </figure>
           </li>
         ))}

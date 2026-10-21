@@ -265,6 +265,17 @@ export const photos: Photo[] = [
     rights: "pending-owner-confirmation",
   },
   {
+    id: "terrace-white-roses",
+    src: "/photos/terrace-white-roses.jpg",
+    width: 1200,
+    height: 1600,
+    category: "garden",
+    alt: { bg: "Каменната тераса, бял катерлив розов храст и зелената поляна в двора", en: "The stone terrace, a white climbing rose and the green lawn in the garden" },
+    caption: { bg: "Терасата и белите рози", en: "The terrace and white roses" },
+    source: { file: "viber_image_2026-10-20_21-10-40-885.jpg", page: "" },
+    rights: "pending-owner-confirmation",
+  },
+  {
     id: "lawn-and-trees",
     src: "/photos/lawn-and-trees.jpg",
     width: 1200,
